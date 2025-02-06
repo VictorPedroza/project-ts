@@ -1,13 +1,11 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import 'dotenv/config';
 
 const app = express();
 app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-    res.status(200).json({
-        message: "App is Running!"
-    })
-})
+import { router } from '../routes/routes';
 
+app.use(router);
 
 export { app }

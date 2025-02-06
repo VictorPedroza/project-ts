@@ -1,5 +1,7 @@
-import { app } from "./server/server"
+import { app } from "./server/server";
 
-app.listen(8088, () => {
-    console.log("Typescript server is Running!")
+const PORT = process.env.PORT;
+
+app.listen(PORT || 8000, () => {
+    console.log(`Typescript server is Running on: http://localhost:${PORT}`)
 })
