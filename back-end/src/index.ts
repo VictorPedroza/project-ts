@@ -1,13 +1,4 @@
-import express, { Request, Response } from 'express';
-
-const app = express();
-app.use(express.json());
-
-app.get("/", (req: Request, res: Response) => {
-    res.status(200).json({
-        message: "Server is Running"
-    })
-})
+import { app } from "./server/server"
 
 app.listen(8088, () => {
     console.log("Typescript server is Running!")
